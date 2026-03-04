@@ -3,49 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIMNASIO ATENAS</title>
+    <title>Gimnasio Atenas</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- ======= HEADER ======= -->
     <header class="header">
-        <h1>Gimnasio Atenas</h1>
-        <nav>
+        <div class="header-logo">
+            <span class="logo-icon">🏛️</span>
+            <h1>Gimnasio Atenas</h1>
+        </div>
+        <nav id="nav">
             <a href="#servicios">Servicios</a>
             <a href="#planes">Planes</a>
             <a href="#contacto">Contacto</a>
         </nav>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
-    <!-- Hero -->
+    <!-- ======= HERO ======= -->
     <section class="hero">
-        <img src="img/mancuernas.jpg" alt="Gimnasio Atenas" class="hero-img">
-        <h2>Tu gimnasio de confianza, cerca de casa</h2>
-        <p>Entrena a tu ritmo, para la salud fisica, con resultados reales.</p>
-        <a href="#contacto" class="btn">Inscríbete hoy</a>
-    </section>
-
-    <!-- Servicios -->
-    <section id="servicios" class="section">
-        <h3>Servicios</h3>
-        <div class="cards">
-            <div class="card">
-                <img src="img/mancuernas.jpg" alt="Pesas y máquinas">
-                <h4>Pesas y máquinas</h4>
-            </div>
-            <div class="card">
-                <img src="img/cardio.jpg" alt="Cardio">
-                <h4>Cardio</h4>
-            </div>
-            <div class="card">
-                <img src="img/funcional.jpg" alt="Entrenamiento funcional">
-                <h4>Entrenamiento funcional</h4>
+        <div class="hero-content">
+            <span class="hero-badge">💪 Tu mejor versión empieza aquí</span>
+            <h2>Tu gimnasio de <span>confianza</span>,<br>cerca de casa</h2>
+            <p>Entrená a tu ritmo, para tu salud física, con resultados reales.</p>
+            <div class="hero-btns">
+                <a href="#contacto" class="btn">Inscribite hoy</a>
+                <a href="#servicios" class="btn btn-outline">Ver servicios</a>
             </div>
         </div>
     </section>
 
-    <!-- Planes -->
+
+    <!-- ======= STATS ======= -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">+500</div>
+            <div class="stat-label">Socios activos</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Años de experiencia</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Disciplinas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">14hs</div>
+            <div class="stat-label">Atención diaria</div>
+        </div>
+    </div>
+
+    <!-- ======= SERVICIOS ======= -->
+    <section id="servicios" class="section">
+        <div class="section-header reveal">
+            <h3>Nuestros Servicios</h3>
+            <p>Todo lo que necesitás para alcanzar tus metas</p>
+        </div>
+        <div class="cards">
+            <div class="card reveal">
+                <div class="card-img-wrapper">
+                    <img src="img/mancuernas.jpg" alt="Pesas y máquinas">
+                    <div class="card-icon">🏋️</div>
+                </div>
+                <div class="card-body">
+                    <h4>Pesas y Máquinas</h4>
+                    <p>Equipamiento completo de musculación para todos los niveles.</p>
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="card-img-wrapper">
+                    <img src="img/cardio.jpg" alt="Cardio">
+                    <div class="card-icon">🏃</div>
+                </div>
+                <div class="card-body">
+                    <h4>Cardio</h4>
+                    <p>Cintas, bicicletas y elípticas para mejorar tu resistencia.</p>
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="card-img-wrapper">
+                    <img src="img/funcional.jpg" alt="Entrenamiento funcional">
+                    <div class="card-icon">⚡</div>
+                </div>
+                <div class="card-body">
+                    <h4>Entrenamiento Funcional</h4>
+                    <p>Clases grupales de alta intensidad con entrenadores certificados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= PLANES (SIN TOCAR - BRANCH COMPAÑERO) ======= -->
     <section id="planes" class="section dark">
         <h3>Planes accesibles</h3>
         <div class="cards">
@@ -60,7 +116,7 @@
         </div>
     </section>
 
-    <!-- Contacto -->
+    <!-- ======= CONTACTO (SIN TOCAR - BRANCH COMPAÑERO) ======= -->
     <section id="contacto" class="section">
         <h3>Contáctanos</h3>
         <form id="contactForm">
@@ -71,13 +127,15 @@
         <p id="mensaje"></p>
     </section>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/1234567890" class="whatsapp" target="_blank">💬</a>
+    <!-- ======= WHATSAPP ======= -->
+    <a href="https://wa.me/1234567890" class="whatsapp" target="_blank" title="Escribinos por WhatsApp">💬</a>
 
-    <!-- Footer -->
+    <!-- ======= FOOTER ======= -->
     <footer>
-        <p>📍 Calle Avenida Siempre Viva #1234 | ⏰ 8:00 - 22:00 </p>
-        <p>© 2026 Gimnasio Atenas</p>
+        <div class="footer-brand">🏛️ Gimnasio Atenas</div>
+        <p class="footer-info">📍 Avenida Siempre Viva #1234</p>
+        <p class="footer-info">⏰ Lunes a Sábado — 8:00 a 22:00</p>
+        <p class="footer-copy">© 2026 Gimnasio Atenas — Todos los derechos reservados</p>
     </footer>
 
     <script src="script.js"></script>
