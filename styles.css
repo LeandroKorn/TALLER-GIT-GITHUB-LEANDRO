@@ -1,5 +1,6 @@
 /* =============================================
    GIMNASIO ATENAS — styles.css
+   NOTA: #planes y #contacto sin modificar (branches)
    ============================================= */
 
 /* === RESET & VARIABLES === */
@@ -470,6 +471,7 @@ nav a.active {
     box-shadow: 0 10px 30px rgba(26, 188, 156, 0.2); /* Sombra teñida de tu color verde */
 }
 
+/* Tu tarjeta normal se levanta -8px en hover, al destacado lo levantamos un poco más */
 .plan-card.destacado:hover {
     transform: scale(1.08) translateY(-8px);
     box-shadow: 0 15px 40px rgba(26, 188, 156, 0.35);
@@ -490,7 +492,7 @@ nav a.active {
     letter-spacing: 1px;
     white-space: nowrap;
     box-shadow: 0 4px 10px rgba(26, 188, 156, 0.4);
-}
+}   
 
 /* =============================================
    CONTACTO — SIN MODIFICAR (branch compañero)
@@ -654,15 +656,5 @@ footer {
     .card {
         width: 100%;
         max-width: 340px;
-    }
-
-    /* Ajustes móviles para los planes */
-    .plan-card.destacado {
-        transform: scale(1);
-        margin-top: 15px;
-    }
-    
-    .plan-card.destacado:hover {
-        transform: translateY(-8px);
     }
 }
