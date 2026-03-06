@@ -3,32 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIMNASIO ATENAS</title>
+    <title>Gimnasio Atenas</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- ======= HEADER ======= -->
     <header class="header">
-        <h1>Gimnasio Atenas</h1>
-        <nav>
+        <div class="header-logo">
+            <span class="logo-icon">🏛️</span>
+            <h1>Gimnasio Atenas</h1>
+        </div>
+        <nav id="nav">
             <a href="#servicios">Servicios</a>
             <a href="#planes">Planes</a>
             <a href="#contacto">Contacto</a>
         </nav>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
-    <!-- Hero -->
+    <!-- ======= HERO ======= -->
     <section class="hero">
-        <img src="img/mancuernas.jpg" alt="Gimnasio Atenas" class="hero-img">
-        <h2>Tu gimnasio de confianza, cerca de casa</h2>
-        <p>Entrena a tu ritmo, para la salud fisica, con resultados reales.</p>
-        <a href="#contacto" class="btn">Inscríbete hoy</a>
+        <div class="hero-content">
+            <span class="hero-badge">💪 Tu mejor versión empieza aquí</span>
+            <h2>Tu gimnasio de <span>confianza</span>,<br>cerca de casa</h2>
+            <p>Entrená a tu ritmo, para tu salud física, con resultados reales.</p>
+            <div class="hero-btns">
+                <a href="#contacto" class="btn">Inscribite hoy</a>
+                <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Servicios -->
+
+    <!-- ======= STATS ======= -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">+500</div>
+            <div class="stat-label">Socios activos</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Años de experiencia</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Disciplinas</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">14hs</div>
+            <div class="stat-label">Atención diaria</div>
+        </div>
+    </div>
+
+    <!-- ======= SERVICIOS ======= -->
     <section id="servicios" class="section">
-        <h3>Servicios</h3>
+        <div class="section-header reveal">
+            <h3>Nuestros Servicios</h3>
+            <p>Todo lo que necesitás para alcanzar tus metas</p>
+        </div>
         <div class="cards">
             <div class="card reveal">
                 <div class="card-img-wrapper">
@@ -75,22 +113,44 @@
         </div>
     </section>
 
-    <!-- Planes -->
-    <section id="planes" class="section dark">
-        <h3>Planes accesibles</h3>
-        <div class="cards">
-            <div class="card">
+   <section id="planes" class="section dark planes-section">
+        <div class="section-header reveal">
+            <h3>Planes accesibles</h3>
+            <p>Elegí la opción que mejor se adapte a tus metas físicas. Sin costos de matrícula.</p>
+        </div>
+        
+        <div class="cards planes-cards">
+            <div class="card plan-card reveal">
                 <h4>Mensual</h4>
-                <p>$40000</p>
+                <div class="precio">
+                    <span class="moneda">ARS $</span>40.000<span class="periodo">/mes</span>
+                </div>
+                <ul class="beneficios">
+                    <li>✔️ Acceso libre a pesas y máquinas</li>
+                    <li>✔️ Clases de funcional incluidas</li>
+                    <li>✔️ Rutina inicial básica</li>
+                </ul>
+                <a href="#contacto" class="btn btn-outline">Elegir plan</a>
             </div>
-            <div class="card">
+
+            <div class="card plan-card destacado reveal">
+                <div class="badge">🔥 Más elegido</div>
                 <h4>Trimestral</h4>
-                <p>$100000</p>
+                <div class="precio">
+                    <span class="moneda">ARS $</span>100.000<span class="periodo">/trim</span>
+                </div>
+                <p class="ahorro">¡Ahorrás $20.000 (17%)!</p>
+                <ul class="beneficios">
+                    <li>✔️ Acceso libre a todas las áreas</li>
+                    <li>✔️ Clases de funcional y cardio</li>
+                    <li>✔️ Rutina personalizada mensual</li>
+                    <li>✔️ Congelamiento por 15 días</li>
+                </ul>
+                <a href="#contacto" class="btn">Comenzar ahora</a>
             </div>
         </div>
     </section>
-
-    <!-- Contacto -->
+    <!-- ======= CONTACTO (SIN TOCAR - BRANCH COMPAÑERO) ======= -->
     <section id="contacto" class="section">
         <h3>Contáctanos</h3>
         <form id="contactForm">
@@ -101,13 +161,15 @@
         <p id="mensaje"></p>
     </section>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/1234567890" class="whatsapp" target="_blank">💬</a>
+    <!-- ======= WHATSAPP ======= -->
+    <a href="https://wa.me/1234567890" class="whatsapp" target="_blank" title="Escribinos por WhatsApp">💬</a>
 
-    <!-- Footer -->
+    <!-- ======= FOOTER ======= -->
     <footer>
-        <p>📍 Calle Avenida Siempre Viva #1234 | ⏰ 8:00 - 22:00 </p>
-        <p>© 2026 Gimnasio Atenas</p>
+        <div class="footer-brand">🏛️ Gimnasio Atenas</div>
+        <p class="footer-info">📍 Avenida Siempre Viva #1234</p>
+        <p class="footer-info">⏰ Lunes a Sábado — 8:00 a 22:00</p>
+        <p class="footer-copy">© 2026 Gimnasio Atenas — Todos los derechos reservados</p>
     </footer>
 
     <script src="script.js"></script>
