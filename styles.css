@@ -135,6 +135,13 @@ nav a.active {
     animation: fadeUp 1s ease both;
 }
 
+}
+
+.hero-content {
+    padding: 40px 20px;
+    animation: fadeUp 1s ease both;
+}
+
 .hero-badge {
     display: inline-block;
     background: var(--verde);
@@ -169,6 +176,15 @@ nav a.active {
     max-width: 550px;
     margin: 0 auto 35px;
     line-height: 1.7;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 }
 
 .hero-btns {
@@ -327,6 +343,13 @@ nav a.active {
     box-shadow: 0 14px 35px rgba(0, 0, 0, 0.14);
 }
 
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.14);
+}
+
 .card-img-wrapper {
     position: relative;
     overflow: hidden;
@@ -379,10 +402,141 @@ nav a.active {
 }
 
 /* =============================================
+   PLANES (Rediseño UX/UI)
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h4 {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--negro);
+    margin-bottom: 8px;
+}
+
+.card-body p {
+    font-size: 0.87rem;
+    color: #777777;
+    line-height: 1.6;
+}
+
+/* =============================================
    PLANES — SIN MODIFICAR (branch compañero)
    ============================================= */
 .section.dark {
-    background-color: #ddd;
+    background-color: #e8e8e8; /* Un gris sutilmente más oscuro para contrastar las tarjetas blancas */
+}
+
+.planes-cards {
+    align-items: center; /* Alineación clave para que el destacado resalte en el centro */
+}
+
+.plan-card {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+}
+
+.plan-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--negro);
+}
+
+/* Jerarquía de Precios */
+.precio {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.moneda {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    vertical-align: super;
+    color: #666;
+    font-weight: 600;
+}
+
+.periodo {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.ahorro {
+    color: var(--verde-dark);
+    font-weight: 700;
+    font-size: 0.95rem;
+    background: rgba(26, 188, 156, 0.15); /* Fondo translúcido basado en tu verde */
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: -10px auto 25px auto;
+}
+
+/* Lista de Beneficios */
+.beneficios {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+    flex-grow: 1; /* Empuja los botones siempre al fondo */
+}
+
+.beneficios li {
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Ajuste de Botones CTA para las cards */
+.plan-card .btn,
+.plan-card .btn-outline {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+/* --- TARJETA DESTACADA --- */
+.plan-card.destacado {
+    border: 3px solid var(--verde);
+    transform: scale(1.05); /* Efecto de escala */
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(26, 188, 156, 0.2); /* Sombra teñida de tu color verde */
+}
+
+.plan-card.destacado:hover {
+    transform: scale(1.08) translateY(-8px);
+    box-shadow: 0 15px 40px rgba(26, 188, 156, 0.35);
+}
+
+.badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--verde);
+    color: var(--blanco);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(26, 188, 156, 0.4);
 }
 
 /* =============================================
@@ -433,6 +587,44 @@ footer {
     color: #aaaaaa;
     text-align: center;
     padding: 40px 20px;
+}
+
+.footer-brand {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 1.4rem;
+    color: var(--verde);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.footer-info {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.footer-copy {
+    font-size: 0.78rem;
+    color: #444444;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+}
+
+/* =============================================
+   ANIMACIONES
+   ============================================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 }
 
 .footer-brand {
@@ -547,5 +739,15 @@ footer {
     .card {
         width: 100%;
         max-width: 340px;
+    }
+
+    /* Ajustes móviles para los planes */
+    .plan-card.destacado {
+        transform: scale(1);
+        margin-top: 15px;
+    }
+    
+    .plan-card.destacado:hover {
+        transform: translateY(-8px);
     }
 }
