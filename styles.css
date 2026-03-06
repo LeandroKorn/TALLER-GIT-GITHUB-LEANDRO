@@ -1,82 +1,502 @@
-/* General */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
+/* =============================================
+   GIMNASIO ATENAS — styles.css
+   ============================================= */
+
+/* === RESET & VARIABLES === */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Header */
+:root {
+    --verde:      #1abc9c;
+    --verde-dark: #16a085;
+    --rojo:       #e74c3c;
+    --rojo-dark:  #c0392b;
+    --negro:      #111111;
+    --gris:       #f4f4f4;
+    --blanco:     #ffffff;
+    --texto:      #333333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: var(--gris);
+    background-image: 
+        linear-gradient(rgba(244, 244, 244, 0.88), rgba(244, 244, 244, 0.88)),
+        url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Parthenon_in_Athens.jpg/1280px-The_Parthenon_in_Athens.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: var(--texto);
+    overflow-x: hidden;
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
 .header {
-    background-color: #1abc9c;
-    color: white;
-    padding: 20px;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(17, 17, 17, 0.97);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
-.header nav a {
-    color: white;
-    margin: 0 10px;
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 26px;
+}
+
+.header h1 {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: var(--verde);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #cccccc;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
 }
 
-/* Botones */
-.btn {
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+nav a:hover,
+nav a.active {
+    color: var(--verde);
+    border-bottom-color: var(--verde);
 }
 
-/* Hero */
+/* Hamburger (mobile) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #cccccc;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+/* =============================================
+   HERO
+   ============================================= */
 .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 20px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url('img/mancuernas.jpg') center / cover no-repeat;
 }
 
-.hero-img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
+.hero-content {
+    padding: 40px 20px;
+    animation: fadeUp 1s ease both;
 }
 
-/* Cards */
+.hero-badge {
+    display: inline-block;
+    background: var(--verde);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 7px 20px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+}
+
+.hero h2 {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    color: var(--blanco);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 span {
+    color: var(--verde);
+}
+
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #e0e0e0;
+    max-width: 550px;
+    margin: 0 auto 35px;
+    line-height: 1.7;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =============================================
+   BOTONES
+   ============================================= */
+.btn {
+    display: inline-block;
+    background: var(--rojo);
+    color: white;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.35);
+}
+
+.btn:hover {
+    background: var(--rojo-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.45);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--verde);
+    color: var(--verde);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background: var(--verde);
+    color: white;
+    box-shadow: 0 6px 20px rgba(26, 188, 156, 0.4);
+}
+
+/* =============================================
+   STATS BAR
+   ============================================= */
+.stats-bar {
+    background: var(--negro);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    padding: 28px 20px;
+    border-right: 1px solid #222;
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 2.2rem;
+    color: var(--verde);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 6px;
+}
+
+/* =============================================
+   SECCIONES GENÉRICAS
+   ============================================= */
+.section {
+    padding: 80px 40px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h3 {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--negro);
+    display: inline-block;
+    padding-bottom: 12px;
+    position: relative;
+}
+
+.section-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 3px;
+    background: var(--verde);
+    border-radius: 2px;
+}
+
+.section-header p {
+    margin-top: 14px;
+    color: #777777;
+    font-size: 0.95rem;
+}
+
+/* =============================================
+   SERVICIOS
+   ============================================= */
+#servicios {
+    background: var(--blanco);
+}
+
 .cards {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .card {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    width: 200px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eeeeee;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card img {
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.14);
+}
+
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.card-img-wrapper img {
     width: 100%;
-    max-height: 150px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    transition: transform 0.4s;
 }
 
-/* Secciones oscuras */
+.card:hover .card-img-wrapper img {
+    transform: scale(1.06);
+}
+
+.card-icon {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--verde);
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h4 {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--negro);
+    margin-bottom: 8px;
+}
+
+.card-body p {
+    font-size: 0.87rem;
+    color: #777777;
+    line-height: 1.6;
+}
+
+/* =============================================
+   PLANES (Rediseño UX/UI)
+   ============================================= */
 .section.dark {
-    background-color: #ddd;
+    background-color: #e8e8e8; /* Un gris sutilmente más oscuro para contrastar las tarjetas blancas */
 }
 
-/* Formularios */
-input, button {
+.planes-cards {
+    align-items: center; /* Alineación clave para que el destacado resalte en el centro */
+}
+
+.plan-card {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+}
+
+.plan-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--negro);
+}
+
+/* Jerarquía de Precios */
+.precio {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.moneda {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    vertical-align: super;
+    color: #666;
+    font-weight: 600;
+}
+
+.periodo {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.ahorro {
+    color: var(--verde-dark);
+    font-weight: 700;
+    font-size: 0.95rem;
+    background: rgba(26, 188, 156, 0.15); /* Fondo translúcido basado en tu verde */
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: -10px auto 25px auto;
+}
+
+/* Lista de Beneficios */
+.beneficios {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+    flex-grow: 1; /* Empuja los botones siempre al fondo */
+}
+
+.beneficios li {
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Ajuste de Botones CTA para las cards */
+.plan-card .btn,
+.plan-card .btn-outline {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+/* --- TARJETA DESTACADA --- */
+.plan-card.destacado {
+    border: 3px solid var(--verde);
+    transform: scale(1.05); /* Efecto de escala */
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(26, 188, 156, 0.2); /* Sombra teñida de tu color verde */
+}
+
+.plan-card.destacado:hover {
+    transform: scale(1.08) translateY(-8px);
+    box-shadow: 0 15px 40px rgba(26, 188, 156, 0.35);
+}
+
+.badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--verde);
+    color: var(--blanco);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(26, 188, 156, 0.4);
+}
+
+/* =============================================
+   CONTACTO — SIN MODIFICAR (branch compañero)
+   ============================================= */
+input,
+button {
     padding: 10px;
     margin: 5px 0;
     width: 100%;
@@ -84,10 +504,165 @@ input, button {
     border: 1px solid #ccc;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
+/* =============================================
+   WHATSAPP FLOTANTE
+   ============================================= */
+.whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
     color: white;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.45);
+    z-index: 999;
+    animation: pulse 2.5s infinite;
+    transition: transform 0.2s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.12);
+    animation: none;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+    background: var(--negro);
+    color: #aaaaaa;
     text-align: center;
-    padding: 15px 0;
+    padding: 40px 20px;
+}
+
+.footer-brand {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 1.4rem;
+    color: var(--verde);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.footer-info {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.footer-copy {
+    font-size: 0.78rem;
+    color: #444444;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+}
+
+/* =============================================
+   ANIMACIONES
+   ============================================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+    50%       { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.75); }
+}
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   RESPONSIVE — MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+
+    .header {
+        padding: 0 20px;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(17, 17, 17, 0.98);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 10px 0;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 14px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #222;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .stats-bar {
+        flex-direction: row;
+    }
+
+    .stat-item {
+        min-width: 50%;
+        border-right: none;
+        border-bottom: 1px solid #222;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    /* Ajustes móviles para los planes */
+    .plan-card.destacado {
+        transform: scale(1);
+        margin-top: 15px;
+    }
+    
+    .plan-card.destacado:hover {
+        transform: translateY(-8px);
+    }
 }
