@@ -372,6 +372,8 @@ nav a.active {
     margin-bottom: 8px;
 }
 
+.card-body .btn {
+    margin-top: 15px;
 .card-body p {
     font-size: 0.87rem;
     color: #777777;
